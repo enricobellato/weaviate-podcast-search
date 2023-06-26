@@ -2,13 +2,15 @@ from langchain.vectorstores.weaviate import Weaviate
 from langchain.llms import OpenAI
 from langchain.chains import ChatVectorDBChain
 import weaviate
+import os
 
 client = weaviate.Client("http://localhost:8080")
 
 vectorstore = Weaviate(client, "PodClip", "content")
 
 MyOpenAI = OpenAI(temperature=0.2, 
-    openai_api_key="ENTER YOUR OPENAI KEY HERE")
+    openai_api_key=os.getenv("OPENAI_API_KEY"))
+
 
 qa = ChatVectorDBChain.from_llm(MyOpenAI, vectorstore)
 
