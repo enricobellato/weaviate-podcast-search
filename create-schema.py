@@ -9,25 +9,25 @@ schema = {
            "class": "PodClip",
            "description": "A podcast clip.",
            "moduleConfig": {
-               "text2vec-transformers": {
-                    "skip": False,
-                    "vectorizeClassName": False,
-                    "vectorizePropertyName": False
+               "text2vec-openai": {
+                    "model": "ada",
+                    "modelVersion": "002",
+                    "type": "text"
                 }
            },
            "vectorIndexType": "hnsw",
-           "vectorizer": "text2vec-transformers",
+           "vectorizer": "text2vec-openai",
            "properties": [
                {
                    "name": "content",
                    "dataType": ["text"],
                    "description": "The text content of the podcast clip",
                    "moduleConfig": {
-                    "text2vec-transformers": {
-                        "skip": False,
-                        "vectorizePropertyName": False,
-                        "vectorizeClassName": False
-                    }
+                       "text2vec-openai": {
+                           "model": "ada",
+                           "modelVersion": "002",
+                           "type": "text"
+                       }
                    }
                },
                {
@@ -35,10 +35,10 @@ schema = {
                 "dataType": ["text"],
                 "description": "The speaker in the podcast",
                 "moduleConfig": {
-                    "text2vec-transformers": {
-                        "skip": True,
-                        "vectorizePropertyName": False,
-                        "vectorizeClassName": False
+                    "text2vec-openai": {
+                        "model": "ada",
+                        "modelVersion": "002",
+                        "type": "text"
                     }
                 }
                },
@@ -47,11 +47,11 @@ schema = {
                    "dataType": ["int"],
                    "description": "The podcast number.",
                    "moduleConfig": {
-                    "text2vec-transformers": {
-                        "skip": True,
-                        "vectorizePropertyName": False,
-                        "vectorizeClassName": False
-                    }
+                       "text2vec-openai": {
+                           "model": "ada",
+                           "modelVersion": "002",
+                           "type": "text"
+                       }
                    }
                },
                {
@@ -59,10 +59,10 @@ schema = {
                    "dataType": ["text"],
                    "description": "An LLM-generated summary of the podcast clip.",
                    "moduleConfig": {
-                       "text2vec-transformers": {
-                           "skip": True,
-                           "vectorizePropertyName": False,
-                           "vectorizeClassName": False
+                       "text2vec-openai": {
+                           "model": "ada",
+                           "modelVersion": "002",
+                           "type": "text"
                        }
                    }
                }
